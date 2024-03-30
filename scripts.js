@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function() {
         // Hide the loading animation
         var loadingAnimation = document.querySelector('.loading-animation');
-        loadingAnimation.style.display = 'unset';
+        loadingAnimation.style.display = 'none';
 
         // Show the website content by setting body's display to 'block'
         var container = document.querySelector('.container');

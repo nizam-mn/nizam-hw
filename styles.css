@@ -26,7 +26,7 @@ body{
     color: #fff;
     background-color: #181818;
     scroll-behavior: smooth; 
-    /* cursor: url('images/cp.svg'), auto; */
+    cursor: url('images/cp.svg'), auto;
 }
 
 /* =============================== */

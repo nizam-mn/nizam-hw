@@ -942,6 +942,7 @@ a.hBtn span:hover{
         font-size: 15px;
         transform: translateX(0);
         letter-spacing: 1px;
+        margin: 30px auto;
     }
 
 
@@ -949,27 +950,40 @@ a.hBtn span:hover{
         width: 200vw;
     } 
     .service-skill .services {
-        margin-left: -7%;
+        margin-left: 0;
+        transform: skew(0);
+        width: 50%;
     }
     .services h1.head {
-        margin-left: 1%;
+        margin-left: 0%;
         font-size: 90px;
+        transform: skew(0deg);
     }
     .services .sone {
-        transform: translateX(5%);
+        transform: translateX(0%);
     }
     .services .stwo {
-        transform: translateX(15%);
+        transform: translateX(0%);
     }
     .services .service {
         width: 70%;
-
+        transform: skew(-10deg);
     }
 
+
+    .service-skill .skills{
+        transform: skew(0);
+        margin-right: 0;
+        width: 50%;
+    }
     .skills h1.head {
-        margin-left: -10%;
-        padding: 0 80px;
+        margin-left: 0%;
+        padding: 0 80px 0 20px;
         font-size: 90px;
+        transform: skew(0);
+    }
+    .skills .skill{
+        transform: skew(0);
     }
     .skills .skill .circular-progress{
         width: 150px;
@@ -981,32 +995,40 @@ a.hBtn span:hover{
     }
 
 
-    section.projects{
+    /* section.projects{
         width: 150vw;
-    }
+    } */
     .projects h1 {
         transform: translateY(0);
         font-size: 90px;
+        width: fit-content;
     }
     .projects .project-div {
+        display: flex;
+        flex-direction: column;
         gap: 10px;
-        height: 72%;
+        height: 74vh;
+        align-items: center;
+        margin-top: 20px;
+        overflow-y: auto;
+        justify-content: unset;
     }
     .projects .project-div .project {
-        width: calc(26%);
-        min-height: 325px;
+        width: calc(70%);
+        min-height: fit-content;
         padding: 12px;
     }
     .projects .project-div .project .tablet {
         opacity: 1;
+        margin: 0 auto;
     }
     
-    .project-div .project a.adjust1{
-        margin-top: 34px;
+    /* .project-div .project a.adjust1{
+        margin-top: unset;
     }
     .project-div .project a.adjust2{
-        margin-top: 58px;
-    }
+        margin-top: unset;
+    } */
 
 
     .contact .contact-div {
@@ -1076,111 +1098,14 @@ a.hBtn span:hover{
     }
 
 
-    section.service-skill{
-        width: 200vw;
-    } 
-    .services h1.head {
-        margin-left: 1%;
-        font-size: 90px;
+    .home .name h1.fname {
+        font-size: 114px;
+        margin-bottom: -80px;
+        letter-spacing: 2px;
     }
-    .services .sone {
-        transform: translateX(5%);
-    }
-    .services .stwo {
-        transform: translateX(15%);
-    }
-    .services .service {
-        width: 70%;
-
-    }
-    .skills h1.head {
-        margin-left: -10%;
-        padding: 0 80px;
-        font-size: 90px;
-    }
-
-
-    section.projects{
-        width: 150vw;
-    }
-    .projects h1 {
-        transform: translateY(0);
-        font-size: 90px;
-    }
-    .projects .project-div {
-        gap: 10px;
-        height: 72%;
-    }
-    .projects .project-div .project {
-        width: calc(26%);
-        min-height: 325px;
-    }
-    .projects .project-div .project .tablet {
-        opacity: 1;
-        width: 150px;
-        height: 75px;
-        margin: -80px auto 0 auto;
-    }
-    .project-div .project p{
-        font-size: 15px;
-    }
-    .project-div .project a.adjust1{
-        margin-top: 10px;
-    }
-    .project-div .project a.adjust2{
-        margin-top: 56px;
-    }
-
-
-    .contact .contact-div {
-        width: 100%;
-    }
-    .contact .contact-div h1{
-        font-size: 90px;
-    }
-    .contact .contact-div .contact-form{
-        margin: 20px;
-        width: 86%;
-    }
-    .contact .contact-div .success-message{
-        width: 88%;
-        font-size: 22px;
-    }
-    .contact .contact-div .contact-form input.submit{
-        width: 100%;
-        transform: translateX(0);
-    }
-    .contact .social-media {
-        width: 20%;
-        padding: 0 20px 0 0;
-    }
-    .contact .social-media a{
-        font-size: 32px;
-    }
-    .contact .footer {
-        width: 20%;
-    }
-    .contact .footer p{
-        font-size: 64px;
-    }
-    .contact .footer img{
-        width: 64px;
-    }
-
-
-    .scroll-indicator img.scroll-char{
-        padding: 0 10px;
-        width: 32px;
-        position: absolute;
-        bottom: 0;
-        left: unset; /* This will be adjusted by JavaScript */
-        right: 0;
-        z-index: 10;
-    }
-
-
-    .hBtn:hover::after{
-        display: none;
+    .home .name h1.lname {
+        font-size: 206px;
+        letter-spacing: 6px;
     }
 
   }

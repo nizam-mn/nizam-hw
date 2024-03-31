@@ -1,0 +1,1112 @@
+@font-face {
+    font-family: 'TT Trailers Trial Variable';
+    src: url(fonts/TT\ Trailers\ Trial\ Variable.woff2);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: 'TT Trailers Trial Variable'; */
+}
+
+html{
+    background-color: #181818;
+    /* scroll-behavior: smooth;  */
+
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+body{
+    display: flex;
+    /* overflow-x: auto;  */
+    overflow-y: hidden;
+    color: #fff;
+    background-color: #181818;
+    scroll-behavior: smooth; 
+    cursor: url('images/cp.svg'), auto;
+}
+
+/* =============================== */
+
+/* Loading animation */
+
+.loading-animation{
+    width: max-content;
+    height: 100vh;
+    
+}
+.loading-container{
+    width: 100vw;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    background-color: #181818;
+    height: 100vh;
+}
+.loading-animation .loading-container .character {
+    /* background-color: rgb(255, 255, 255); */
+    width: 100px; /* Adjust according to your image size */
+    height: 140px; 
+    background-image: url(images/char-stationary.png); /* Path to your first walking frame */
+    background-size: cover;
+    animation: walk-animation .3s linear infinite, move-forward 4s forwards;
+    transform: translateX(-5vw);
+  }
+  
+  @keyframes walk-animation {
+    0% {
+      background-image: url(images/char-run-0.png);
+    }
+    50% {
+      background-image: url(images/char-run-1.png);
+    }
+    100% {
+      background-image: url(images/char-run-0.png);
+    }
+  }
+  
+  @keyframes move-forward {
+    0% {
+      transform: translateX(-50vw); 
+    }
+    100% {
+      transform: translateX(-5vw); 
+    }
+  }
+
+  .loading-animation .loading-container .character.stop {
+    animation: none;
+  }
+  
+  .loading-animation .loading-container .character span.msg {
+    display: none;
+    width: 0;
+    background-color: #181818;
+    color: #fff;
+    transform: translate(100px, -120px);
+    padding: 15px;
+    border: 2px solid #ffffff;
+    letter-spacing: 3px;
+    font-size: 24px;
+    border-radius: 14px 18px 14px 0;
+    animation: slideIn 0.5s ease forwards; 
+    font-family: 'Kanit';
+    line-height: 1;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      width: 0;
+      transform: translate(-100px, 140px);
+    }
+    to {
+      opacity: 1;
+      width: fit-content;
+      transform: translate(100px, -120px);
+    }
+  }
+  
+  .loading-animation .loading-container .character span.msg span{
+    font-size: 60px;
+    letter-spacing: 4px;
+  }
+  
+  .loading-animation .loading-container hr{
+    height: 2px;
+    border: none;
+    /* width: -webkit-fill; */
+    width: -webkit-fill-available; 
+    background-color: #fff;
+  }
+  
+
+
+/* ================== */
+
+.container {
+    display: flex; 
+    flex-direction: row; 
+    scroll-behavior: smooth; 
+}
+section{
+    background-color: #181818;
+    border-right: 2px dashed white;
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    scroll-behavior: smooth; 
+
+}
+
+/* section:nth-child(-n+2) a.hBtn {
+    display: none;
+} */
+
+/* Home Secion */
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .name{ 
+    text-align: -webkit-center;
+    /* margin: 10px 20px;  */
+}
+.home .name h1.fname {
+        font-family: 'TT Trailers Trial Variable';
+    width: fit-content;
+    font-size: 254px;
+    letter-spacing: 10px;
+    margin-bottom: -190px;
+    margin-top: 100px;
+    /* opacity: 0; */
+}
+
+
+
+.home .name h1.lname{
+    font-family: 'TT Trailers Trial Variable';
+    width: fit-content;
+    font-size: 475px;
+    letter-spacing: 18px;
+    /* text-align: left; */
+    /* opacity: 0; */
+}
+
+/* Animation for first name letters */
+@keyframes fromtop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for last name letters */
+@keyframes frombottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animations to individual letters */
+.home .name h1.fname span {
+    display: inline-block;
+    animation: fromtop 1s ease forwards;
+    animation-delay: calc(0.2s * var(--index));
+}
+
+.home .name h1.lname span {
+    display: inline-block;
+    animation: frombottom 1s ease forwards;
+    animation-delay: calc(0.2s * var(--index));
+}
+
+
+/* About Section */
+
+.about{
+    display: flex;
+}
+
+
+.about h1{
+    background-color: #fff;
+    color: #181818;
+    font-family: 'TT Trailers Trial Variable';
+    /* font-family: 'Audiowide'; */
+    /* transform: rotate(-90deg); */
+    height: 100vh;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 105px;
+    padding: 20px 0;
+    letter-spacing: 2px;
+    text-align: right;
+    line-height: 1.1;
+    transition: .5s ease;
+    margin-top: 100%;
+    z-index: 2;
+}
+
+.about p{
+    font-family: 'Kanit';
+    font-weight: 300;
+    width: 60%;
+    height: fit-content;
+    margin: auto auto;
+    font-size: 20px;
+    letter-spacing: 3px;
+    transition: 2s ease;
+    transform: translateX(125%);
+}
+
+/* .about .about-span {
+    opacity: 0; /* Initially hide spans */
+    /* transition: opacity 0.5s ease; Add transition for opacity  */
+/* } */ *
+
+
+/* Skill - Service section */
+
+/* Services */
+
+.service-skill{
+    display: flex;
+}
+
+.service-skill .services{
+    width: 55%;
+    /* background-color: aqua; */
+    border-right: #ffffff 1px solid;
+    transform: skew(-10deg);
+    margin-left: -5%;
+    overflow: hidden;
+}
+
+.services h1.head{
+    background-color: #fff;
+    color: #181818;
+    font-family: 'TT Trailers Trial Variable';
+    transform: skew(10deg);
+    font-size: 105px;
+    margin-left: -50%;
+    padding: 0 80px 0 20px;
+    letter-spacing: 2px;
+    width: fit-content;
+    line-height: 1.1;
+    transition: 2.5s ease;
+    z-index: 2;
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 93% 100%);
+}
+
+
+.services .service{
+    width: 50%;
+    overflow: hidden;
+    /* padding: 20px; */
+    margin: 30px auto;
+    border: #fff 2px solid;
+    /* text-align: right; */
+    transition: 2.5s;
+}
+
+.services .service h1{
+    font-family: 'TT Trailers Trial Variable';
+    font-size: 30px;
+    transform: skew(10deg);
+    letter-spacing: 2px;
+    padding: 10px 20px;
+}
+
+.services .service p{
+    background-color: #ffffff0f;
+    color: #ffffff;
+    padding: 10px 40px 25px 50px;
+    margin: -15px;
+    font-family: 'Kanit';
+    transform: skew(10deg);
+
+}
+
+.services .sone{
+    transform: translateX(-150%);
+}
+.services .stwo{
+    transform: translateX(150%);
+}
+
+
+
+
+
+/* Skills */
+
+.service-skill .skills{
+    width: 55%;
+    /* background-color: aqua; */
+    border-left: #fff 1px solid;
+    transform: skew(-10deg);
+    margin-right: -5%;
+    overflow: hidden;
+    text-align: right;}
+
+.skills h1.head{
+    background-color: #fff;
+    color: #181818;
+    font-family: 'TT Trailers Trial Variable';
+    transform: skew(10deg);
+    font-size: 105px;
+    margin-left: -50%;
+    padding: 0 80px 0 40px;
+    letter-spacing: 2px;
+    width: fit-content;
+    line-height: 1.1;
+    transition: 3s ease;
+    /* margin-right: -100%; */
+    z-index: 2;
+    clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 92% 100%);
+}
+
+/* Skill circular progress bar */
+
+.skills .skill{
+    transform: skew(10deg);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    /* margin: auto; */
+}
+
+.skills .skill .circular-progress{
+    position: relative;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: conic-gradient(#fff 3.6deg, #181818 0deg);
+    /* background: conic-gradient(#fff calc(var(--progress-value) * 3.6deg), #181818 0deg); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+}
+.skills .skill .progress-bg{
+    height: 130px;
+    width: 130px;
+    font-family: 'Kanit';
+    background-color: #181818;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 20px;
+    display: grid;
+    font-weight: 600;
+    place-items: center;
+    align-content: center;
+}
+
+/* =================================== */
+
+/* Project section */
+
+
+
+.projects h1 {
+    background-color: #181818; /* Background color */
+    color: #fff; /* Text color */
+    font-family: 'TT Trailers Trial Variable', sans-serif; /* Specify backup fonts */
+    font-size: 105px;
+    padding: 0 20px;
+    letter-spacing: 2px;
+    text-align: right;
+    width: 40%;
+    border: #ffffff 2px solid; 
+    overflow: hidden;
+    transform: translateY(100vh);
+    transition: 3s ease;
+}
+
+.projects .project-div {
+    display: flex;
+    /* margin: 50px; */
+    gap: 30px;
+    height: 63%;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.projects .project-div .project{
+    width: calc(18%);
+    min-height: 253px;
+    border: #ffffff 2px solid;
+    border-radius: 8px;
+    padding: 16px;
+
+}
+
+.projects .project-div .project .tablet {
+    width: 180px; /* adjust as needed */
+    height: 90px; /* 3:2 aspect ratio */
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 4px; /* Adjust padding as needed */
+    margin: -105px auto 0 auto;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+  
+.projects .project-div .project:hover .tablet {
+    opacity: 1;
+}
+  
+.projects .project-div .project .tablet .screen {
+    width: 100%;
+    height: 100%;
+    background-color: #513c3c;
+    /* background-image: url(images/polynotes.png); */
+    box-sizing: border-box;
+    background-size: contain;
+}
+
+.projects .project-div .project .tablet .screen.one{
+    background-image: url(images/polynotes.png);
+} 
+.projects .project-div .project .tablet .screen.two{
+    background-image: url(images/n-games.png);
+} 
+.projects .project-div .project .tablet .screen.three{
+    background-image: url(images/getjob.png);
+} 
+
+
+.project-div .project h2{
+    font-family: 'TT Trailers Trial Variable';
+    font-size: 32px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.project-div .project p{
+    /* background-color: #ffffff0f; */
+    color: #ffffff;
+    /* padding: 10px 40px 25px 50px; */
+    /* margin: -15px; */
+    font-family: 'Kanit';
+}
+
+.project-div .project a{
+    font-family: 'Kanit';
+    background-color: #fff;
+    color: #181818;
+    text-decoration: none;
+    border: 2px solid #fff;
+    font-size: 18px;
+    padding: 3px 9px;
+    margin-top: 10px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    transition: .4s;
+}
+.project-div .project a:hover{
+    background-color: #181818;
+    color: #fff;
+}
+.project-div .project a.adjust{
+    margin-top: 32px;
+}
+
+
+/* Contact section */
+
+.contact{
+    display: flex;
+}
+.contact .contact-div{
+    width: 50%;
+}
+
+.contact .contact-div h1{
+    background-color: #181818; /* Background color */
+    color: #181818; /* Text color */
+    font-family: 'TT Trailers Trial Variable';
+    -webkit-text-stroke: 2px white;
+    font-size: 105px;
+    padding: 0 20px;
+    letter-spacing: 3px;
+    text-align: right;
+    width: 50%;
+    /* border: #ffffff 2px solid;  */
+    /* overflow: hidden; */
+    /* transform: translateY(100vh); */
+    transition: 3s ease;
+}
+
+.contact .contact-div .contact-form{
+    display: grid;
+    width: 80%;
+    margin: 20px 50px 50px 85px;
+    gap: 20px;    
+}
+.contact .contact-div .contact-form input, .contact .contact-div .contact-form textarea{
+    padding: 15px;
+    font-family: 'Kanit';
+    resize: none;
+    /* background-color: #181818; */
+    border: none;
+    border-radius: 5px;
+}
+
+.contact .contact-div .contact-form input.submit{
+    border: 2px solid #fff;
+    background-color: #181818;
+    color: #fff;
+    font-size: 20px;
+    padding: 8px;
+    transition: .4s;
+    width: 50%;
+    transform: translateX(100%);
+}
+.contact .contact-div .contact-form input.submit:hover{
+    background-color: #fff;
+    color: #181818;
+}
+
+/* contact form submit message */
+
+.contact .contact-div .success-message{
+    width: 70%;
+    height: 200px;
+    margin: 15% auto;
+    background-color: #181818;
+    font-size: 26px;
+    font-family: 'Kanit';
+}
+.contact .contact-div .success-message p{
+    display: grid;
+}
+
+/* Social Media section */
+
+.contact .social-media{
+    display: grid;
+    /* height: 100%; */
+    align-content: space-evenly;
+    padding: 0 50px 0 0;
+    width: 35%;
+}
+
+.contact .social-media a{
+    text-decoration: none;
+    font-size: 40px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    /* background-color: #fff; */
+    border: 2px solid white;
+    transition: .4s;
+    width: fit-content;
+    margin: auto;
+}
+.contact .social-media a:hover{
+    background-color: #ffffff1a;
+    transform: scale(.9);
+}
+
+
+
+/* Foooter section */
+.contact .footer{
+    width: 15%;
+    height: 100vh;
+    border-left: #fff 2px solid;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+
+}
+
+.contact .footer img{
+    width: 80px;
+}
+
+.contact .footer p{
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 6px;
+    transform: rotate(180deg);
+    font-family: 'Tulpen One';
+    font-size: 80px;
+    writing-mode: vertical-rl;
+}
+
+/* ================================= */
+/* Go to first Button */
+
+a.hBtn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+    flex-direction: column-reverse;
+    z-index: 10;
+    
+}
+a.hBtn span{
+    font-size: 30px;
+    border-radius: 36px;
+    padding: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    color: #181818;
+    transition: .5s;
+}
+a.hBtn span:hover{
+    background-color: #014a8f;
+    color: #fff;
+}
+
+.hBtn:hover::after {
+    font-family: 'Kanit';
+    content: "Go to first"; /* Display the value of the title attribute */
+    background-color: black;
+    color: white; 
+    padding: 12px 18px; 
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+
+/* Scroll indicator line */
+
+.scroll-indicator{
+    position: fixed;
+    bottom: 4%;
+    width: 100vw;
+    z-index: 5;
+}
+
+.scroll-indicator img.scroll-char{
+   padding: 0 10px;
+    width: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0; /* This will be adjusted by JavaScript */
+    z-index: 10;
+}
+
+/* .scroll-indicator img.scroll-char:hover {
+    animation: char-jump 5s forwards;
+}
+
+@keyframes char-jump {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 2000px;
+    }
+    100% {
+        bottom: 0;
+    }
+} */
+
+
+
+.scroll-indicator img.scroll-char.flipped {
+    transform: scaleX(-1);
+}
+
+.scroll-indicator .scroll-line{
+    height: 2px;
+    background-color: #fff;
+
+}
+
+
+
+/* Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    
+    html, body{
+        overflow-y: hidden;
+    }
+    body{
+        overflow-x: scroll;
+    }
+
+
+    .loading-animation .loading-container .character{
+        width: 85px;
+        height: 120px;
+        transform: translateX(-12vw); 
+    }
+    @keyframes move-forward {
+        0% {
+          transform: translateX(-50vw); 
+        }
+        100% {
+          transform: translateX(-12vw); 
+        }
+      }
+    .loading-animation .loading-container .character span.msg{
+        font-size: 18;
+    }
+    .loading-animation .loading-container .character span.msg span{
+        font-size: 50px;
+    }
+    @keyframes slideIn {
+        from {
+          opacity: 0;
+          width: 0;
+          transform: translate(-100px, 140px);
+        }
+        to {
+          opacity: 1;
+          width: fit-content;
+          transform: translate(90px, -110px);
+        }
+      }
+
+
+    .home .name h1.fname {
+        font-size: 200px;
+        margin-bottom: -150px;
+    }
+    .home .name h1.lname {
+        font-size: 370px;
+    }
+
+
+    .about h1 {
+        margin-top: 0;
+    }
+    .about p {
+        width: 70%;
+        font-size: 17px;
+        transform: translateX(0);
+    }
+
+
+    section.service-skill{
+        width: 150vw;
+    } 
+    .service-skill .services {
+        margin-left: -6%;
+    }
+    .services h1.head {
+        margin-left: 2.5%;
+    }
+    .services .sone {
+        transform: translateX(25%);
+    }
+    .services .stwo {
+        transform: translateX(0%);
+    }
+    .services .service {
+        width: 60%;
+
+    }
+    .skills h1.head {
+        margin-left: -10%;
+        padding: 0 80px;
+    }
+
+
+    .projects h1 {
+        transform: translateY(0);
+    }
+    .projects .project-div {
+        gap: 10px;
+        height: 72%;
+    }
+    .projects .project-div .project {
+        width: calc(25%);
+        min-height: 325px;
+    }
+    .projects .project-div .project .tablet {
+        opacity: 1;
+    }
+    .project-div .project a.adjust1{
+        margin-top: 34px;
+    }
+    .project-div .project a.adjust2{
+        margin-top: 82px;
+    }
+
+
+    .contact .contact-div {
+        width: 60%;
+    }
+    .contact .contact-div .contact-form{
+        margin: 20px 50px;
+    }
+    .contact .contact-div .success-message{
+        width: 88%;
+        font-size: 24px;
+    }
+    .contact .social-media {
+        width: 20%;
+    }
+    .contact .footer {
+        width: 20%;
+    }
+
+
+    .scroll-indicator img.scroll-char{
+        padding: 0 10px;
+        width: 32px;
+        position: absolute;
+        bottom: 0;
+        left: unset;
+        z-index: 10;
+        right: 0;
+    }
+
+
+    /* a.hBtn{
+        display: flex;
+    } */
+
+    .hBtn:hover::after{
+        display: none;
+    }
+}
+
+
+
+/* CSS rules for smartphones */
+
+@media only screen and (max-width: 480px) {
+    
+    html, body{
+        overflow-y: hidden;
+    }
+    body{
+        overflow-x: scroll;
+    }
+
+
+    .loading-animation .loading-container .character{
+        width: 78px;
+        height: 110px;
+        transform: translateX(-15vw);
+    }
+    @keyframes move-forward {
+        0% {
+          transform: translateX(-50vw); 
+        }
+        100% {
+          transform: translateX(-15vw); 
+        }
+      }
+    .loading-animation .loading-container .character span.msg{
+        font-size: 17px;
+    }
+    .loading-animation .loading-container .character span.msg span{
+        font-size: 45px;
+    }
+    @keyframes slideIn {
+        from {
+          opacity: 0;
+          width: 0;
+          transform: translate(-100px, 140px);
+        }
+        to {
+          opacity: 1;
+          width: fit-content;
+          transform: translate(80px, -100px);
+        }
+      }
+
+    .home .name h1.fname {
+        font-size: 130px;
+        margin-bottom: -100px;
+        letter-spacing: 2px;
+    }
+    .home .name h1.lname {
+        font-size: 240px;
+        letter-spacing: 6px;
+    }
+
+
+    .about h1 {
+        margin-top: 0;
+        font-size: 75px;
+    }
+    .about p {
+        width: 72%;
+        font-size: 15px;
+        transform: translateX(0);
+        letter-spacing: 1px;
+        margin: 30px auto;
+    }
+
+
+    section.service-skill{
+        width: 200vw;
+    } 
+    .service-skill .services {
+        margin-left: 0;
+        transform: skew(0);
+        width: 50%;
+    }
+    .services h1.head {
+        margin-left: 0%;
+        font-size: 90px;
+        transform: skew(0deg);
+    }
+    .services .sone {
+        transform: translateX(0%);
+    }
+    .services .stwo {
+        transform: translateX(0%);
+    }
+    .services .service {
+        width: 70%;
+        transform: skew(-10deg);
+    }
+
+
+    .service-skill .skills{
+        transform: skew(0);
+        margin-right: 0;
+        width: 50%;
+    }
+    .skills h1.head {
+        margin-left: 0%;
+        padding: 0 80px 0 20px;
+        font-size: 90px;
+        transform: skew(0);
+    }
+    .skills .skill{
+        transform: skew(0);
+    }
+    .skills .skill .circular-progress{
+        width: 150px;
+        height: 150px;
+    }
+    .skills .skill .progress-bg{
+        height: 120px;
+        width: 120px;
+    }
+
+
+    /* section.projects{
+        width: 150vw;
+    } */
+    .projects h1 {
+        transform: translateY(0);
+        font-size: 90px;
+        width: fit-content;
+    }
+    .projects .project-div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 72vh;
+        align-items: center;
+        margin-top: 20px;
+        overflow-y: auto;
+        justify-content: unset;
+    }
+    .projects .project-div .project {
+        width: calc(70%);
+        min-height: fit-content;
+        padding: 12px;
+    }
+    .projects .project-div .project .tablet {
+        opacity: 1;
+        margin: 0 auto;
+    }
+    
+    /* .project-div .project a.adjust1{
+        margin-top: unset;
+    }
+    .project-div .project a.adjust2{
+        margin-top: unset;
+    } */
+
+
+    .contact .contact-div {
+        width: 100%;
+    }
+    .contact .contact-div h1{
+        font-size: 90px;
+    }
+    .contact .contact-div .contact-form{
+        margin: 20px;
+        width: 86%;
+    }
+    .contact .contact-div .success-message{
+        width: 88%;
+        font-size: 22px;
+    }
+    .contact .contact-div .contact-form input.submit{
+        width: 100%;
+        transform: translateX(0);
+    }
+    .contact .social-media {
+        width: 20%;
+        padding: 0 20px 0 0;
+    }
+    .contact .social-media a{
+        font-size: 32px;
+    }
+    .contact .footer {
+        width: 20%;
+    }
+    .contact .footer p{
+        font-size: 64px;
+    }
+    .contact .footer img{
+        width: 64px;
+    }
+
+
+    .scroll-indicator img.scroll-char{
+        padding: 0 10px;
+        width: 32px;
+        position: absolute;
+        bottom: 0;
+        left: unset; /* This will be adjusted by JavaScript */
+        right: 0;
+        z-index: 10;
+    }
+
+
+    .hBtn:hover::after{
+        display: none;
+    }
+
+  }
+
+
+
+  /* CSS rules for smartphones */
+
+@media only screen and (max-width: 430px) {
+    
+    html, body{
+        overflow-y: hidden;
+    }
+    body{
+        overflow-x: scroll;
+    }
+
+
+    .home .name h1.fname {
+        font-size: 114px;
+        margin-bottom: -80px;
+        letter-spacing: 2px;
+    }
+    .home .name h1.lname {
+        font-size: 206px;
+        letter-spacing: 6px;
+    }
+
+  }
+  
